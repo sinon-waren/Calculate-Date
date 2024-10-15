@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
     <title>Calculate Date</title>
 </head>
 <body>
+    <h1>Calculate Date</h1>
+    <p>Calculate the number of years, days, months, hours, seconds that have passed since a date.</p>
+    <h2>My date of birth</h2>
+
+    <div class="calcul-date">
+        <input type="date" id="date-user"> <button id="calcul">calcul</button><br>
+    </div>
+    <div class="result">
+        <span>Result</span> <input type="text" id="result">
+    </div>
     
+    <h2>You have been on earth since</h2>
+    <div class="info-calcul">
+        <ul>
+            <li>Month : <input type="text" id="result-month"></li>
+            <li>Days : <input type="text" id="result-days"></li>
+            <li>Hours : <input type="text" id="result-hours"></li>
+            <li>Minutes : <input type="text" id="result-minutes"></li>
+            <li>Seconds : <input type="text" id="result-seconds"></li>
+        </ul>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 </html>
