@@ -1,39 +1,29 @@
-document.getElementById('calcul').addEventListener('click', function() {
-    const dateNaissance = document.getElementById('date-user').value;
-    if (!dateNaissance) {
-        alert("Veuillez saisir une date de naissance.");
-        return;
+document.getElementById('calcul').addEventListener('click', function () {
+    const dateUser = document.getElementById("date-user").value; 
+    if (!dateUser){
+        alert("Be sure to enter a date before clicking on the calculate button"); 
+        return; 
     }
 
-    const ageDetails = calculerAge(new Date(dateNaissance));
+    const ageDetails = agecalculate(new Date(dateUser)); 
+
     document.getElementById('result').value = ageDetails.years + " ans";
     document.getElementById('result-month').value = ageDetails.months + " month";
     document.getElementById('result-days').value = ageDetails.days + " days";
-    document.getElementById('result-hours').value = ageDetails.hours + " hours";
-    document.getElementById('result-minutes').value = ageDetails.minutes + " min";
-    document.getElementById('result-seconds').value = ageDetails.seconds + " s";
-});
+    document.getElementById('result-hours').value = ageDetails.hours + " hours"; 
+    document.getElementById('result-minutes').value = ageDetails.minutes + " min"; 
+    document.getElementById('result-seconds').value = ageDetails.seconds + " s"; 
+}); 
 
-function calculerAge(dateNaissance) {
-    const dateActuelle = new Date();
-    let years = dateActuelle.getFullYear() - dateNaissance.getFullYear();
-    let months = dateActuelle.getMonth() - dateNaissance.getMonth();
-    let days = dateActuelle.getDate() - dateNaissance.getDate();
+function agecalculate (dateUser) {
+    const dateNow = new Date();
+    let years = dateNow.getFullYear() - dateUser.getFullYear(); 
+    let months = dateNow.getMonth() - dateUser.getMonth(); 
+    let days = dateNow.getDate() - dateUser.getDate();
+    let hours = dateNow.getHours() - dateUser.getHours();
+    let minutes = dateNow.getMinutes() - dateUser.getMinutes(); 
+    let seconds = dateNow.getSeconds() - dateUser.getSeconds(); 
 
-    if (days < 0) {
-        months--;
-        const lastMonth = new Date(dateActuelle.getFullYear(), dateActuelle.getMonth(), 0);
-        days += lastMonth.getDate(); // Get last month days
-    }
-
-    if (months < 0) {
-        years--;
-        months += 12;
-    }
-
-    const hours = dateActuelle.getHours() - dateNaissance.getHours();
-    const minutes = dateActuelle.getMinutes() - dateNaissance.getMinutes();
-    const seconds = dateActuelle.getSeconds() - dateNaissance.getSeconds();
 
     return {
         years,
