@@ -29,6 +29,23 @@ h2 {
     margin-bottom: 10px;
 }
 
+.calcul-date input {
+    width: 125px;
+    padding: 7px;
+    border: none;
+    height: 20px;
+    border-radius: 5px;
+}
+
+#calcul {
+    margin-left: 30px;
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
 ul {
     list-style: none;
 }
@@ -37,8 +54,12 @@ li {
     margin-bottom: 10px;
 }
 
-li input {
+li input, #result {
+    width: 100px;
     display: block;
     margin-top: 5px;
     border: none;
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
